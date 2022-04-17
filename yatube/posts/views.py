@@ -8,5 +8,5 @@ def index(request):
 
 # В урл мы ждем парметр, и нужно его прередать в функцию для использования
 def group_posts(request, pk):
-    return HttpResponse(f'Мороженое номер {pk}')
+    return HttpResponse(f'Сложносозданная {pk}')
     
