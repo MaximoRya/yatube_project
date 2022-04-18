@@ -6,7 +6,12 @@ def index(request):
     return HttpResponse(f'Поехали...')
 
 
+
+def index(request):
+    template = 'posts/index.html'
+    return render(request, template) 
+
 # В урл мы ждем парметр, и нужно его прередать в функцию для использования
 def group_posts(request, pk):
-    return HttpResponse(f'Сложносозданная {pk}')
+    return HttpResponse(f'Сложная страница <pk>')
     

@@ -54,8 +54,12 @@ ROOT_URLCONF = 'yatube.urls'
 
 TEMPLATES = [
     {
+        
+        #'DIRS': [],
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        # Добавлено: Искать шаблоны на уровне проекта
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
