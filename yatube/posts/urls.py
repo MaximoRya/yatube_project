@@ -2,7 +2,9 @@
 from django.urls import  include, path
 from . import views
 
+app_name = 'posts'
+
 urlpatterns = [
     path('', views.index),
-    path('group/<slug:slug_any>/', views.group_posts)
+    path('group/', views.group_posts, name='group_list'),
 ] 

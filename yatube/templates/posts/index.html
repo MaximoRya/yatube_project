@@ -1,5 +1,8 @@
 <!-- templates/ice_cream/index.html --> 
 {% extends 'base.html' %}
 {% block content %}
-  Это главная страница проекта «fvfvf»!
-{% endblock %}
+  {{text}}
+  <a class="navbar-brand" href="{% url 'posts:group_list' %}">
+    Страница со списком групп
+  </a> 
+{% endblock %} 

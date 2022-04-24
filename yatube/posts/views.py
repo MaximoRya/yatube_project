@@ -1,17 +1,30 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
-# Create your views here.
-def index(request):
-    return HttpResponse(f'Поехали...')
+
 
 
 
 def index(request):
     template = 'posts/index.html'
-    return render(request, template) 
+    title = 'СОцСЕТь'
+    context = {
+        # В словарь можно передать переменную
+        'title': title,
+        # А можно сразу записать значение в словарь. Но обычно так не делают
+        'text': 'Это главная страница проекта Yatube',
+    }
+    return render(request, template, context) 
 
 # В урл мы ждем парметр, и нужно его прередать в функцию для использования
-def group_posts(request, pk):
-    return HttpResponse(f'Сложная страница <pk>')
+def group_posts(request):
+    template = 'posts/group_list.html'
+    title = "Группы"
+    context = {
+        # В словарь можно передать переменную
+        'title': title,
+        # А можно сразу записать значение в словарь. Но обычно так не делают
+        'text': 'Здесь будет информация о группах проекта Yatube',
+    }
+    return render(request, template, context)
     
